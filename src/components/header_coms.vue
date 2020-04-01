@@ -53,6 +53,7 @@
 			line-height: 104px;
 			text-align: left;
 			margin: 0;
+			text-shadow: -2px -3px 5px #fff;
 		}
 		.routers{
 			>a{
