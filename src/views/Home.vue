@@ -14,7 +14,7 @@
 						<p>2020-03-22</p>
 					</div>
 					<ul class="list">
-						<li v-for="(item,i) in list0" key="i">
+						<li v-for="(item,i) in list0" :key="i">
 							<p>{{item.title}}</p>
 							<span>{{item.time}}</span>
 							
@@ -27,7 +27,7 @@
 				<el-tabs type="card" class="box2">
 					<el-tab-pane label="待办">
 						<ul>
-							<li v-for="i in 5" key="i">
+							<li v-for="i in 5" :key="i">
 								<span>您有一条新的待办信息，请立即处理。</span>
 								<a href="javascript:;">查看</a>
 							</li>
@@ -46,7 +46,7 @@
 				<div class="c-item-contetn">
 
 					<ul>
-						<li v-for="(item,i) in list1" key="i">
+						<li v-for="(item,i) in list1" :key="i">
 							<span class="icon"></span>
 							<p>{{item}}</p>
 						</li>
@@ -61,7 +61,7 @@
 				</div>
 				<div class="c-item-contetn">
 					<ul>
-						<li v-for="i in 5" key="i">
+						<li v-for="i in 5" :key="i">
 							<span>您有一条新的待办信息，请立即处理。</span>
 							<a href="javascript:;">查看</a>
 						</li>

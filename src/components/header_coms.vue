@@ -18,7 +18,7 @@
 				<a href="javascript:;">一键登出</a>
 			</div>
 			<div class="search-bar">
-			  <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
+			  <el-input placeholder="请输入内容" v-model="input" class="input-with-select">
 				<el-button slot="append" icon="el-icon-search"></el-button>
 			  </el-input>
 			</div>
@@ -27,6 +27,18 @@
 </template>
 
 <script>
+	export default {
+	  name: 'header',
+	  data(){
+	  return {
+		  input:''
+	  }
+	  },
+	  
+	  props: {
+	    msg: String
+	  }
+	}
 </script>
 
 <style lang="less">
@@ -42,17 +54,18 @@
 		box-sizing: border-box;
 	
 		h1 {
-			width: 639px;
+			// width: 639px;
 			height: 104px;
 			padding-left: 100px;
 			background: url(../assets/images/guohui.png) no-repeat left center;
 			line-height: 104px;
 			font-size: 40px;
+			margin: 0;
+			margin-right:90px;
 			font-family: "Adobe Heiti Std";
 			color: #535455;
 			line-height: 104px;
 			text-align: left;
-			margin: 0;
 			text-shadow: -2px -3px 5px #fff;
 		}
 		.routers{
@@ -104,6 +117,14 @@
 					font-size: 18px;
 					border-color: #4185c7;
 				}
+			}
+		}
+	}
+	@media screen and (max-width: 1600px) {
+	    .login-header{
+			h1{
+				font-size: 30px;
+				width: auto;
 			}
 		}
 	}
