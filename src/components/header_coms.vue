@@ -13,7 +13,7 @@
 		</div>
 		<div class="header-right-bar">
 			<div class="user-info">
-				<span class="name">欢迎XXX，登录辽宁省交通运输厅综合管理系统</span>
+				<span class="name">欢迎{{uesrName}}，登录辽宁省交通运输厅综合管理系统</span>
 				<span class="line">|</span>
 				<a href="javascript:;">一键登出</a>
 			</div>
@@ -28,10 +28,11 @@
 
 <script>
 	export default {
-	  name: 'header',
+	  name: 'headerbar',
 	  data(){
 	  return {
-		  input:''
+		  input:'',
+		  uesrName:'XXX' //用户信息
 	  }
 	  },
 	  
@@ -52,6 +53,7 @@
 		align-items: center;
 		padding:0 40px;
 		box-sizing: border-box;
+		position: relative;
 	
 		h1 {
 			// width: 639px;
@@ -67,8 +69,10 @@
 			line-height: 104px;
 			text-align: left;
 			text-shadow: -2px -3px 5px #fff;
+			white-space: nowrap;
 		}
 		.routers{
+			white-space: nowrap;
 			>a{
 				color: #555555;
 				text-decoration: none;
@@ -91,12 +95,16 @@
 		.header-right-bar{
 			flex:1;
 			text-align: right;
-			position: relative;
-			top:-20px;
+			position: absolute;
+			right: 40px;
+			top:20px;
+			white-space: nowrap;
 			.user-info{
 				font-size: 16px;
 				color: #666666;
 				margin-bottom:15px;
+				overflow: hidden;
+				text-overflow: ellipsis;
 				.line{
 					margin:0 20px;
 					color: #a2bacc;
@@ -125,8 +133,18 @@
 			h1{
 				font-size: 30px;
 				width: auto;
+				margin-right:30px;
+			}
+			.routers{
+				a{
+					font-size: 18px;
+				}
+				>span{
+					margin:0 10px;
+				}
 			}
 		}
+		
 	}
 	
 </style>

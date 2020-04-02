@@ -74,13 +74,15 @@
 </template>
 
 <script>
-	// @ is an alias to /src
+	// 引入公共头部组件
 	import headerComs from '../components/header_coms.vue'
+	// 引入公共底部组件
 	import footerComs from '../components/footer_coms.vue'
 	export default {
 		name: 'Home',
 		data() {
 			return {
+				//list0  为通知公告 模块信息
 				list0: [
 					{
 						title:'辽宁省交通运输行政综合管理系统门户统一平台升级改造完成',
@@ -100,6 +102,8 @@
 					}
 					
 				],
+				
+				//list1  为常用系统 模块信息
 				list1: [
 					'辽宁省交通厅公路管理局普通公路沥青运输车辆监管服务平台',
 					'辽宁省交通工程质量与安全监督综合信息系统',
