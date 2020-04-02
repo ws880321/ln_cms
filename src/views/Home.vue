@@ -41,14 +41,19 @@
 			<div class="c-item-box box3">
 				<div class="item-header">
 					<div class="title">常用系统</div>
-					<div class="op"><span><i class="el-icon-edit"></i>管理</span><span>更多》</span></div>
+					<div class="op">
+						<span @click="edit=true" v-if="!edit"><i class="el-icon-edit"></i>管理</span>
+						<span  v-if="!edit">更多》</span>
+						<span class="cancel-btn"  v-if="edit" @click="edit=false">取消</span>
+						<span class="ok-btn"  v-if="edit" @click="submit">确定</span>
+					</div>
 				</div>
 				<div class="c-item-contetn">
-
 					<ul>
 						<li v-for="(item,i) in list1" :key="i">
+							<span class="radio" v-if="edit" :class="{'active':hasC(item.id)}" @click="addC(i)"></span>
 							<span class="icon"></span>
-							<p>{{item}}</p>
+							<p>{{item.name}}</p>
 						</li>
 						<li><span class="icon add-icon"><i class="el-icon-plus"></i></span></li>
 					</ul>
@@ -82,6 +87,8 @@
 		name: 'Home',
 		data() {
 			return {
+				edit:false,
+				currentArray:[],
 				//list0  为通知公告 模块信息
 				list0: [
 					{
@@ -105,15 +112,55 @@
 				
 				//list1  为常用系统 模块信息
 				list1: [
-					'辽宁省交通厅公路管理局普通公路沥青运输车辆监管服务平台',
-					'辽宁省交通工程质量与安全监督综合信息系统',
-					'辽宁省汽车客运互联网售票系统',
-					'重点营运车辆卫星定位行业监督考核系统',
-					'辽宁省公路沥青拌和站远程实时监控系统',
-					'辽宁省普通公路桥隧管理系统',
-					'辽宁省危险货物港口作业安全监管信息管理系统',
-					'基于GIS的辽宁省港口资源管理及应用指挥系统',
+					{
+						id:0,
+						name:'辽宁省交通厅公路管理局普通公路沥青运输车辆监管服务平台'
+					},
+					{
+						id:1,
+						name:'辽宁省交通工程质量与安全监督综合信息系统'
+					},
+					{
+						id:2,
+						name:'辽宁省汽车客运互联网售票系统'
+					},
+					{
+						id:3,
+						name:'重点营运车辆卫星定位行业监督考核系统'
+					},
+					{
+						id:4,
+						name:'辽宁省公路沥青拌和站远程实时监控系统'
+					},
+					{
+						id:5,
+						name:'辽宁省普通公路桥隧管理系统'
+					},
+					{
+						id:6,
+						name:'辽宁省危险货物港口作业安全监管信息管理系统'
+					},{
+						id:7,
+						name:'基于GIS的辽宁省港口资源管理及应用指挥系统'
+					},
 				]
+			}
+		},
+		methods:{
+			hasC(i){
+				 return this.currentArray.indexOf(i)>=0
+			},
+			addC(i){
+				let index=this.currentArray.indexOf(i)
+				if(index==-1){
+					this.currentArray.push(i)
+				}else{
+					this.currentArray.splice(index,1)
+				}
+			},
+			submit(){
+				this.edit=false
+				//请求后台数据更新 list1
 			}
 		},
 		components: {
@@ -178,6 +225,10 @@
 				font-size: 14px;
 				span{
 					margin:0 10px;
+					cursor: pointer;
+				}
+				.ok-btn{
+					color:  #4185c7;;
 				}
 			}
 		}
@@ -323,7 +374,20 @@
 				width: 270px;
 				align-items: center;
 				margin-bottom: 20px;
-
+				position: relative;
+				.radio{
+					width: 18px;height: 18px;
+					border:1px solid #4185c7;
+					border-radius: 50%;
+					background-color: #fff;
+					box-sizing: border-box;
+					position: absolute;
+					top:-9px;
+					left:-9px;
+					&.active{
+						background:url(../assets/images/right.png) no-repeat center #fff;
+					}
+				}
 				.icon {
 					display: inline-block;
 					height: 44px;

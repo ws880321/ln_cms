@@ -1,0 +1,72 @@
+{
+  "id": "1730256",
+  "name": "辽宁交通运输",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "辽宁交通运输",
+  "glyphs": [
+    {
+      "icon_id": "13861080",
+      "name": "1_常用",
+      "font_class": "_changyong",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "13861081",
+      "name": "1_辅助决策",
+      "font_class": "_fuzhujuece",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "13861082",
+      "name": "1_告警",
+      "font_class": "_gaojing",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "13861083",
+      "name": "1_网络",
+      "font_class": "_wangluo",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "13861084",
+      "name": "1_路网",
+      "font_class": "_luwang",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "13861085",
+      "name": "1_安全",
+      "font_class": "_anquan",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "13861086",
+      "name": "1_信用",
+      "font_class": "_xinyong",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "13861087",
+      "name": "1_政务",
+      "font_class": "_zhengwu",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "13861088",
+      "name": "1-04",
+      "font_class": "_anquanzhifa",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    }
+  ]
+}
