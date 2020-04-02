@@ -28,7 +28,7 @@
 </template>
 
 <script>
-
+	// 引入公共底部组件
 	import footerComs from '../components/footer_coms.vue'
   export default {
     data() {
@@ -38,6 +38,7 @@
           password: '',
         },
 		loading:true,
+		// 登陆验证规则
         rules: {
           name: [
             { required: true, message: '请输入账号', trigger: 'blur' },
@@ -52,6 +53,7 @@
     },
 	components:{footerComs},
     methods: {
+	  // 登陆提交事件
       submitForm(formName) {
 		 this.$router.push('/home')
         this.$refs[formName].validate((valid) => {
