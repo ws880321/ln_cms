@@ -280,6 +280,68 @@
 	.as-item-box.right-box{
 		width: 900px;
 	}
+	.box3 {
+		ul {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+	
+			li {
+				list-style: none;
+				display: flex;
+				width: 270px;
+				align-items: center;
+				margin-bottom: 20px;
+				position: relative;
+				.radio{
+					width: 18px;height: 18px;
+					border:1px solid #4185c7;
+					border-radius: 50%;
+					background-color: #fff;
+					box-sizing: border-box;
+					position: absolute;
+					top:-9px;
+					left:-9px;
+					&.active{
+						background:url(../assets/images/right.png) no-repeat center #fff;
+					}
+				}
+				.icon {
+					display: inline-block;
+					height: 44px;
+					width: 44px;
+					background: url(../assets/images/car.png) no-repeat center #f4f5f7;
+					border: 1px solid #e3ecf2;
+					border-radius: 3px;
+					;
+				}
+	
+				;
+	
+				.add-icon {
+					background-image: none;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 20px;
+					color: #4185c7;
+				}
+	
+				p {
+					flex: 1;
+					line-height: 16px;
+					text-align: left;
+					font-size: 14px;
+					margin: 0;
+					margin-left: 15px;
+					color: #555555;
+					;
+				}
+			}
+		}
+	}
 </style>
 <style lang="scss">
 	
