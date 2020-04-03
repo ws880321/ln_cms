@@ -1,0 +1,53 @@
+	.form-tips{
+		.el-form-item__content{
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-left:0!important;
+			padding-left:60px;
+			box-sizing: border-box;
+			&::after{
+				position: absolute;
+			}
+			.el-loading-spinner .circular{
+				width: 30px;
+				height: 30px;
+			    margin-top: 0px;
+			    text-align: center;
+			    position: relative;
+			}
+			&::before{
+				position: absolute;
+			}
+			span{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				font-size: 14px;
+				color: #4185c7;
+			}
+			a{
+				color: #999999;
+				font-size: 14px;;
+			}
+		}
+	}
+	.login-form-wrap{
+			.el-tabs__nav{
+				display: flex!important;
+				width:100%;
+				background-color: #eff7ff;
+				text-align:center;
+				.el-tabs__item{
+					flex:1!important;
+					display: flex!important;
+					align-items:center!important;
+					text-align:center!important;
+					justify-content:center!important;
+					&.is-active{
+						background-color: #fff;
+					}
+				}
+			}
+		}

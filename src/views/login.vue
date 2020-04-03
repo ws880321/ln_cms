@@ -86,7 +86,7 @@
     }
   }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.login-container {
 		display: flex;
 		flex-direction: column;
@@ -248,11 +248,6 @@
 			position: relative;
 			z-index: 20;
 		}
-	}
-	.header .el-form-item__label{
-	
-		
-		
 	}
 	.form-head::after{
 			content: '';
