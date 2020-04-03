@@ -4,24 +4,39 @@
 			<h1>辽宁省交通运输厅综合管理系统</h1>
 		</el-header>
 		<el-main class="login-main">
-			<el-form :model="ruleForm"  ref="ruleForm" label-width="60px" class="login-form">
-				
-				<h3 class="form-head"><span>账号登陆</span></h3>
-				<el-form-item label="账号" prop="name">
-					<el-input v-model="ruleForm.name"></el-input>
-				</el-form-item>
-				<el-form-item label="密码" prop="password">
-					<el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
-				</el-form-item>
-				<el-form-item>
-					<el-button type="primary" class="sub-btn" @click="submitForm('ruleForm')" >立即登陆</el-button>
-				</el-form-item>
-				<el-form-item class="form-tips">
-					<span><i v-loading="loading"></i>本地证书检测中...</span>
-					<a href="javascript:;">证书下载</a>
-				</el-form-item>
-				
-			</el-form>
+			
+			<el-tabs type="card" class="box2 login-form-wrap">
+				<el-tab-pane label="账号密码登陆">
+					<el-form :model="ruleForm"  ref="ruleForm" label-width="60px" class="login-form">
+						<h3 class="form-head"><span>账号登陆</span></h3>
+						<el-form-item label="账号" prop="name">
+							<el-input v-model="ruleForm.name"></el-input>
+						</el-form-item>
+						<el-form-item label="密码" prop="password">
+							<el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
+						</el-form-item>
+						<el-form-item>
+							<el-button type="primary" class="sub-btn" @click="submitForm('ruleForm')" >立即登陆</el-button>
+						</el-form-item>
+						<el-form-item class="form-tips">
+							<span><i v-loading="loading"></i>本地证书检测中...</span>
+							<a href="javascript:;">证书下载</a>
+						</el-form-item>
+						
+					</el-form>
+				</el-tab-pane>
+				<el-tab-pane label="扫码登陆">
+				<el-form  label-width="60px" class="login-form">
+						<h3 class="form-head"><span>扫码登陆</span></h3>
+						<div class="ercode">
+							<img src="../assets/images/ercode.gif">
+						</div>
+						<p>扫一扫登陆</p>
+						
+						
+					</el-form></el-tab-pane>
+			</el-tabs>
+			
 		</el-main>
 		<footerComs/>
 	</el-container>
@@ -111,8 +126,7 @@
 		background-size: contain;
 		position: relative;
 		background-color: #f9f9f9;
-
-		.login-form {
+		.login-form-wrap{
 			background-color: #fff;
 			border-top: 2px solid #4185c7;
 			position: absolute;
@@ -122,8 +136,47 @@
 			margin-top: -220px;
 			top: 50%;
 			box-shadow: 0 0 12px 5px #eeeeee;
-			padding: 40px;
 			box-sizing: border-box;
+			.el-tabs__nav{
+				display: flex!important;
+				width:100%;
+				background-color: #eff7ff;
+				text-align:center;
+
+				.el-tabs__item{
+					flex:1!important;
+					display: flex!important;
+					align-items:center!important;
+					text-align:center!important;
+					justify-content:center!important;
+					&.is-active{
+						background-color: #fff;
+					}
+				}
+			}
+		}
+		.login-form {
+			background-color: #fff;
+			height: 400px;
+			width: 430px;
+			right: 130px;
+			padding: 5px 30px;
+			box-sizing: border-box;
+			p{
+				text-align: center;
+				color: #555;
+			}
+		}
+		.ercode{
+			width: 200px;
+			height: 200px;
+			margin:0 auto;
+			border:1px solid #eee;
+			padding:3px;
+			img{
+				width:100%;
+				height: 100%
+			}
 		}
 	}
 	.form-tips{
