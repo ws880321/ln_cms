@@ -28,7 +28,10 @@
 					<el-tab-pane label="待办">
 						<ul>
 							<li v-for="i in 5" :key="i">
-								<span>您有一条新的待办信息，请立即处理。</span>
+								<p>
+									<span>您有一条新的待办信息，请立即处理。</span>
+									<span class="source">来源系统：辽宁省汽车客运互联网售票系统</span >
+								</p>
 								<a href="javascript:;">查看</a>
 							</li>
 							
@@ -313,6 +316,24 @@
 
 		.box2 ul {
 			padding: 0 20px;
+			li {
+				
+				height: 40px;
+				p{
+					max-width: 500px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					margin:0;
+					line-height: 20px;
+					cursor: pointer;
+					span.source{
+						font-size: 12px;
+						color: #8c8c8c;
+						
+					}
+				}
+			}
 		}
 
 
@@ -343,19 +364,22 @@
 			display: flex;
 			justify-content: space-between;
 			margin: 0;
-			height: 30px;
-			line-height: 30px;
+			height: 40px;
+			line-height: 40px;
 			font-size: 14px;
 			color: #555555;
-			margin-bottom: 30px;
+			margin-bottom: 20px;
+			align-items: center;
 
 			a {
 				border: 1px solid #a8c7e5;
 				color: #a8c7e5;
 				border-radius: 15px;
 				padding: 0 20px;
-				display: inline-block;
+				height: 30px;;
+				display: flex;
 				text-decoration: none;
+				align-items: center;
 			}
 		}
 	}
